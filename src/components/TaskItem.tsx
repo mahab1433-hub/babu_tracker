@@ -7,9 +7,10 @@ interface TaskItemProps {
   task: Task;
   onDelete: (id: string) => void;
   onEdit: (task: Task) => void;
+  onToggle: (id: string) => void;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onEdit }) => {
+const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onEdit, onToggle }) => {
   const navigate = useNavigate();
   const isCompleted = task.status === 'Completed';
 
@@ -21,6 +22,14 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onEdit }) => {
     >
       <div className="task-main-content">
         <div className="task-left">
+          <div className="task-checkbox-container" onClick={(e) => {
+            e.stopPropagation();
+            onToggle(task.id);
+          }}>
+            <div className={`task-checkbox ${isCompleted ? 'checked' : ''}`}>
+              {isCompleted && <span>✓</span>}
+            </div>
+          </div>
           <div className="task-content">
             <h3 className={`task-title ${isCompleted ? 'strikethrough' : ''}`}>
               {task.title}

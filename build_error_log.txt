@@ -1,0 +1,13 @@
+src/components/HabitCard.tsx(2,1): error TS6133: 'useMemo' is declared but its value is never read.
+src/components/HabitCard.tsx(69,11): error TS6133: 'getTodayGridDays' is declared but its value is never read.
+src/components/HabitItem.tsx(12,29): error TS6133: 'selectedDate' is declared but its value is never read.
+src/components/HabitList.tsx(22,3): error TS6133: 'onEdit' is declared but its value is never read.
+src/components/StatsView.tsx(78,11): error TS6133: 'isTodaySelected' is declared but its value is never read.
+src/components/StatsView.tsx(260,16): error TS6133: 'h' is declared but its value is never read.
+src/components/TaskView.tsx(99,17): error TS2322: Type '{ key: string; task: Task; onToggle: (id: string) => Promise<void>; onEdit: (task: Task) => void; onDelete: (id: string) => void; }' is not assignable to type 'IntrinsicAttributes & TaskItemProps'.
+  Property 'onToggle' does not exist on type 'IntrinsicAttributes & TaskItemProps'.
+src/pages/HabitPage.tsx(50,9): error TS6133: 'toggleDarkMode' is declared but its value is never read.
+src/pages/JournalPage.tsx(6,5): error TS6133: 'FiType' is declared but its value is never read.
+src/pages/JournalPage.tsx(10,5): error TS6133: 'FiList' is declared but its value is never read.
+src/pages/JournalPage.tsx(13,15): error TS6133: 'FiListNumbers' is declared but its value is never read.
+src/utils/storage.ts(2,16): error TS2305: Module '"../types"' has no exported member 'TaskData'.

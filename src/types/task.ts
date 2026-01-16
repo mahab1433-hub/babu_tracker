@@ -9,3 +9,7 @@ export interface Task {
     status: 'Pending' | 'Completed';
     createdAt: string; // ISO string for sorting
 }
+
+export interface TaskData {
+    tasks: Task[];
+}
