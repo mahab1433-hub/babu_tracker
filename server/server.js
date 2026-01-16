@@ -12,7 +12,12 @@ const app = express();
 // Middleware
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production'
-        ? [process.env.FRONTEND_URL, 'https://babu-tracker.onrender.com']
+        ? [
+            process.env.FRONTEND_URL,
+            'https://babu-tracker.onrender.com',
+            'http://localhost',      // Android Capacitor
+            'capacitor://localhost'  // iOS Capacitor
+        ]
         : true, // Allow all in dev
     credentials: true,
 };
