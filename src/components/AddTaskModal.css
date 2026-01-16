@@ -1,0 +1,223 @@
+/* Reuse modal styles from AddHabitModal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scoped to .add-task-modal to avoid conflicts */
+.add-task-modal.modal-content {
+  background: #1e293b;
+  /* Dark background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  color: #e2e8f0;
+  /* Light text */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.add-task-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-task-modal .modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.add-task-modal .modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #94a3b8;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.add-task-modal .modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+.add-task-modal .modal-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-task-modal .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-task-modal .form-group label {
+  font-weight: 600;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.add-task-modal .form-group input,
+.add-task-modal .form-group select,
+.add-task-modal .form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: #0f172a;
+  /* Darker input bg */
+  color: #f1f5f9;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.add-task-modal .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-task-modal .form-group input:focus,
+.add-task-modal .form-group select:focus,
+.add-task-modal .form-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.add-task-modal .form-group input.input-error {
+  border-color: #ef4444;
+}
+
+.add-task-modal .form-group input.input-error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.add-task-modal .error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: -0.25rem;
+}
+
+.add-task-modal .modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.add-task-modal .cancel-button,
+.add-task-modal .save-button {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-task-modal .cancel-button {
+  background: rgba(255, 255, 255, 0.05);
+  /* Dark mode cancel */
+  color: #e2e8f0;
+}
+
+.add-task-modal .cancel-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.add-task-modal .save-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  /* Blue save button */
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.add-task-modal .save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.add-task-modal .save-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .add-task-modal.modal-content {
+    width: 95%;
+    border-radius: 20px;
+  }
+
+  .add-task-modal .modal-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .add-task-modal .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .add-task-modal .modal-form {
+    padding: 1.5rem;
+  }
+
+  .add-task-modal .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .add-task-modal .cancel-button,
+  .add-task-modal .save-button {
+    width: 100%;
+  }
+}

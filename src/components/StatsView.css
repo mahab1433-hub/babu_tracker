@@ -1,0 +1,134 @@
+.stats-view {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e2e8f0;
+  padding-bottom: 5rem;
+  /* Space for bottom navigation */
+}
+
+.stats-view h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.5rem 0;
+}
+
+/* Grid Layout */
+.stats-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Section Card */
+.stats-section-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-section-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.stats-section-card h3 {
+  margin: 0 0 1.5rem 0;
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Chart Wrapper */
+.chart-wrapper {
+  flex: 1;
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Recharts Tooltip */
+.custom-tooltip {
+  background: rgba(30, 41, 59, 0.9);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-tooltip .label {
+  color: #e2e8f0;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.custom-tooltip p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+/* Motivation Section */
+.motivation-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.motivation-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin: 0.5rem 0 0;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.stats-view.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.stats-view.loading h2 {
+  color: #94a3b8;
+  animation: pulse 1.5s ease-in-out infinite;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section-card {
+    min-height: auto;
+  }
+}
