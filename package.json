@@ -11,6 +11,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "@capacitor/android": "^8.0.1",
+    "@capacitor/cli": "^8.0.1",
+    "@capacitor/core": "^8.0.1",
     "@types/react-router-dom": "^5.3.3",
     "jspdf": "^3.0.4",
     "react": "^18.2.0",
